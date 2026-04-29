@@ -78,7 +78,7 @@ function Contact() {
               <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
                 <div className="form-group">
                   <label>Full Name</label>
-                  <input type="text" placeholder="John Doe" />
+                  <input type="text" placeholder="Saad" />
                 </div>
                 <div className="form-group">
                   <label>Email Address</label>
