@@ -42,38 +42,49 @@ function Home() {
           
           <div className="service-grid">
             <div className="service-card">
-              <div className="card-number">01</div>
-              <div className="icon">🛡️</div>
-              <h3>Procurement</h3>
-              <p>Direct sourcing from the most reliable LPG producers globally, ensuring a consistent supply chain for the local market.</p>
-              <div className="card-footer" onClick={() => navigate("/network")}>Learn More →</div>
+              <div className="card-image-box">
+                <img src="/Photos/BowzerFilling.jpeg" alt="LPG Procurement" />
+              </div>
+              <div className="card-content">
+                <div className="card-number">01</div>
+                <h3>Procurement</h3>
+                <p>Strategic sourcing and efficient intake from global and local producers to maintain a steady energy supply.</p>
+                <div className="card-footer" onClick={() => navigate("/network")}>Learn More →</div>
+              </div>
             </div>
 
             <div className="service-card active-card">
-              <div className="card-number">02</div>
-              <div className="icon">🏗️</div>
-              <h3>Storage</h3>
-              <p>Operating state-of-the-art storage terminals equipped with advanced monitoring and fire-safety systems.</p>
-              <div className="card-footer" onClick={() => navigate("/network")}>Learn More →</div>
+              <div className="card-image-box">
+                <img src="/Photos/StorageUnit4.jpeg" alt="LPG Storage Facility" />
+              </div>
+              <div className="card-content">
+                <div className="card-number">02</div>
+                <h3>Storage</h3>
+                <p>High-capacity, safety-first storage infrastructure designed to withstand industrial demands and ensure reserves.</p>
+                <div className="card-footer" onClick={() => navigate("/network")}>Learn More →</div>
+              </div>
             </div>
 
             <div className="service-card">
-              <div className="card-number">03</div>
-              <div className="icon">🚛</div>
-              <h3>Distribution</h3>
-              <p>A specialized fleet of bowsers delivering bulk LPG and cylinders to commercial and industrial hubs nationwide.</p>
-              <div className="card-footer" onClick={() => navigate("/network")}>Learn More →</div>
+              <div className="card-image-box">
+                <img src="/Photos/FullPlantShot.jpeg" alt="LPG Distribution Network" />
+              </div>
+              <div className="card-content">
+                <div className="card-number">03</div>
+                <h3>Distribution</h3>
+                <p>A massive nationwide logistical network ensuring that LPG reaches every industrial and commercial corner safely.</p>
+                <div className="card-footer" onClick={() => navigate("/network")}>Learn More →</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CLIENT SECTION - REFRESHED LOGIC */}
+      {/* CLIENT SECTION */}
       <section className="clients-section">
         <p className="section-tag">TRUSTED BY INDUSTRY LEADERS</p>
         <div className="logo-slider">
           <div className="logo-track">
-            {/* Duplicating the list for a seamless infinite scroll */}
             {[...clients, ...clients].map((client, index) => (
               <div className="logo-item" key={index}>
                 <img src={client.url} alt={client.name} />
@@ -90,7 +101,7 @@ function Home() {
         .hero { 
           min-height: 90vh; 
           position: relative; 
-          background: url('/BG.jpg') no-repeat center/cover;
+          background: url('/Photos/BowzerNextToStorageUnit.jpeg') no-repeat center/cover;
           display: flex; 
           align-items: center; 
           color: white; 
@@ -98,7 +109,7 @@ function Home() {
         }
         .hero-overlay { 
           position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-          background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.3)); 
+          background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)); 
         }
         .hero-content { position: relative; z-index: 2; max-width: 800px; }
         .hero-subtitle { color: #d94b2b; font-weight: 800; letter-spacing: 4px; font-size: 14px; display: block; margin-bottom: 15px; }
@@ -106,54 +117,46 @@ function Home() {
         .hero-content p { font-size: clamp(16px, 2vw, 18px); line-height: 1.6; margin-bottom: 40px; opacity: 0.9; }
         
         .hero-btns { display: flex; flex-wrap: wrap; gap: 15px; }
-        .primary-btn, .secondary-btn { padding: 18px 40px; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; }
+        .primary-btn, .secondary-btn { padding: 18px 40px; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
         .primary-btn { background: #d94b2b; color: white; }
         .secondary-btn { background: transparent; color: white; border: 2px solid white; }
 
-        /* CORE OPERATIONS SECTION */
+        /* CORE OPERATIONS */
         .services { padding: 100px 10%; background: #fcfcfc; }
         .tagline { color: #d94b2b; font-weight: 700; letter-spacing: 2px; font-size: 13px; }
         .services-header h2 { font-size: clamp(28px, 5vw, 48px); margin: 10px 0; color: #1a1a1a; font-weight: 800; }
         .red-accent { width: 80px; height: 6px; background: #d94b2b; margin-bottom: 70px; }
 
-        .service-grid { 
-          display: grid; 
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-          gap: 30px; 
-        }
-        
-        .service-card { padding: 60px 40px; background: white; border: 1px solid #f0f0f0; transition: 0.4s; position: relative; }
-        .card-number { position: absolute; right: 20px; top: 10px; font-size: 80px; font-weight: 900; color: rgba(0,0,0,0.03); }
-        .service-card .icon { font-size: 45px; margin-bottom: 25px; display: block; }
-        .service-card h3 { font-size: 26px; margin-bottom: 20px; font-weight: 700; }
-        .service-card p { color: #666; line-height: 1.7; margin-bottom: 30px; }
-        
-        .card-footer { font-weight: 700; color: #d94b2b; cursor: pointer; transition: 0.3s; display: inline-block; }
-        .card-footer:hover { transform: translateX(5px); color: #b83d23; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: white; border: 1px solid #eee; transition: 0.4s; overflow: hidden; display: flex; flex-direction: column; }
+        .card-image-box { width: 100%; height: 220px; overflow: hidden; }
+        .card-image-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .card-content { padding: 40px; position: relative; flex-grow: 1; }
+        .card-number { position: absolute; right: 25px; top: 20px; font-size: 50px; font-weight: 900; color: rgba(0,0,0,0.04); }
+        .service-card h3 { font-size: 24px; margin-bottom: 15px; font-weight: 700; color: #1a1a1a; }
+        .service-card p { color: #555; line-height: 1.7; margin-bottom: 25px; font-size: 15px; }
+        .card-footer { font-weight: 700; color: #d94b2b; cursor: pointer; transition: 0.3s; }
+        .service-card:hover { transform: translateY(-12px); border-color: #d94b2b; box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
+        .service-card:hover .card-image-box img { transform: scale(1.08); }
 
-        .service-card:hover { transform: translateY(-15px); border-color: #d94b2b; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-
-        /* CLIENT SECTION - LOGO COLOR LOGIC */
+        /* CLIENT SECTION */
         .clients-section { padding: 80px 0; background: #fff; border-top: 1px solid #eee; overflow: hidden; width: 100%; }
         .section-tag { text-align: center; font-size: 12px; letter-spacing: 3px; color: #888; font-weight: 700; margin-bottom: 50px; }
-        
         .logo-slider { width: 100%; overflow: hidden; }
         .logo-track { display: flex; width: max-content; animation: scroll 30s linear infinite; }
-        
         .logo-item { width: 250px; display: flex; justify-content: center; align-items: center; padding: 0 30px; }
         
         .logo-item img { 
           width: 140px; 
           height: 80px; 
           object-fit: contain; 
-          filter: grayscale(0%); /* FULL COLOR BY DEFAULT */
+          filter: grayscale(0%);
           transition: 0.3s ease;
           opacity: 1;
         }
         
-        /* BLACK AND WHITE ONLY ON HOVER */
         .logo-item img:hover { 
-          filter: grayscale(100%); 
+          filter: grayscale(100%);
           opacity: 0.7;
         }
 
@@ -162,15 +165,52 @@ function Home() {
           100% { transform: translateX(-50%); } 
         }
 
-        /* MOBILE FIXES */
+        /* RESPONSIVE DESIGN */
+        
+        /* TABLETS (992px and below) */
+        @media (max-width: 992px) {
+          .hero { padding: 80px 5%; }
+          .services { padding: 80px 5%; }
+        }
+
+        /* MOBILE (768px and below) */
         @media (max-width: 768px) {
-          .hero { padding: 100px 5% 60px; text-align: center; justify-content: center; min-height: auto; }
-          .hero-btns { justify-content: center; }
-          .hero-btns button { width: 100%; }
+          .hero { 
+            padding: 120px 5% 60px; 
+            text-align: center; 
+            justify-content: center;
+            min-height: 80vh;
+          }
+          .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .hero-btns { 
+            justify-content: center;
+            width: 100%;
+          }
+          .hero-btns button { 
+            width: 100%; 
+          }
+          .hero-overlay {
+            background: rgba(0, 0, 0, 0.6); /* Darker overlay for mobile readability */
+          }
+          
           .services { padding: 60px 5%; }
-          .service-card { padding: 40px 25px; }
-          .logo-item { width: 200px; }
-          .logo-item img { width: 100px; height: 60px; }
+          .services-header { text-align: center; }
+          .red-accent { margin: 10px auto 40px; }
+          
+          .service-grid {
+            grid-template-columns: 1fr; /* Force 1 column on mobile */
+          }
+          
+          .logo-item {
+             width: 180px; /* Smaller items for mobile scroll */
+          }
+          .logo-item img {
+             width: 100px;
+          }
         }
       `}</style>
     </div>

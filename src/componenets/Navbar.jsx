@@ -1,8 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      if (typeof window !== 'undefined') {
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+          setIsVisible(false);
+          setIsMenuOpen(false); 
+        } else {
+          setIsVisible(true);
+        }
+        setLastScrollY(window.scrollY);
+      }
+    };
+
+    window.addEventListener('scroll', controlNavbar);
+    return () => {
+      window.removeEventListener('scroll', controlNavbar);
+    };
+  }, [lastScrollY]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -14,10 +35,9 @@ function Navbar() {
 
   return (
     <>
-      <header className="navbar">
+      <header className={`navbar ${!isVisible ? "nav-hidden" : ""}`}>
         <div className="navbar-container">
           
-          {/* LEFT: LOGO + TEXT WRAPPED IN NAVLINK */}
           <NavLink to="/" className="logo-link" onClick={closeMenu}>
             <div className="logo-section">
               <img
@@ -25,7 +45,6 @@ function Navbar() {
                 alt="Indus Gas"
                 className="logo-img"
               />
-              {/* This text will hide on extremely small screens */}
               <div className="logo-text">
                 <h1>INDUS GAS</h1>
                 <p>PRIVATE LIMITED</p>
@@ -33,14 +52,12 @@ function Navbar() {
             </div>
           </NavLink>
 
-          {/* MOBILE TOGGLE BUTTON */}
           <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
             <span className={`bar ${isMenuOpen ? "open" : ""}`}></span>
             <span className={`bar ${isMenuOpen ? "open" : ""}`}></span>
             <span className={`bar ${isMenuOpen ? "open" : ""}`}></span>
           </button>
 
-          {/* RIGHT: NAV LINKS */}
           <nav className={`nav-links ${isMenuOpen ? "active" : ""}`}>
             <NavLink to="/" end onClick={closeMenu}>HOME</NavLink>
             <NavLink to="/about" onClick={closeMenu}>ABOUT US</NavLink>
@@ -58,9 +75,14 @@ function Navbar() {
           width: 100%;
           background: white;
           box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-          position: sticky;
+          position: fixed;
           top: 0;
           z-index: 1000;
+          transition: transform 0.4s ease-in-out;
+        }
+
+        .nav-hidden {
+          transform: translateY(-100%);
         }
 
         .navbar-container {
@@ -88,6 +110,13 @@ function Navbar() {
           height: 60px;
           object-fit: contain;
           transition: 0.3s ease;
+          flex-shrink: 0;
+        }
+
+        .logo-text {
+          display: flex;
+          flex-direction: column;
+          white-space: nowrap; /* Prevents text from wrapping to a new line */
         }
 
         .logo-text h1 {
@@ -96,6 +125,7 @@ function Navbar() {
           color: #d94b2b;
           letter-spacing: 1px;
           font-weight: bold;
+          line-height: 1;
         }
 
         .logo-text p {
@@ -105,7 +135,6 @@ function Navbar() {
           color: #444;
         }
 
-        /* DESKTOP NAV */
         .nav-links {
           display: flex;
           gap: 25px;
@@ -142,7 +171,6 @@ function Navbar() {
           width: 100%;
         }
 
-        /* HAMBURGER MENU BUTTON */
         .menu-toggle {
           display: none;
           flex-direction: column;
@@ -161,7 +189,6 @@ function Navbar() {
           transition: 0.3s ease;
         }
 
-        /* HAMBURGER TO X ANIMATION */
         .bar.open:nth-child(1) { transform: translateY(8px) rotate(45deg); }
         .bar.open:nth-child(2) { opacity: 0; }
         .bar.open:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -172,7 +199,6 @@ function Navbar() {
           background: #d94b2b;
         }
 
-        /* MOBILE STYLES */
         @media (max-width: 992px) {
           .menu-toggle {
             display: flex;
@@ -208,24 +234,24 @@ function Navbar() {
           .nav-links a::after {
             display: none;
           }
-          
-          .logo-img {
-            width: 50px;
-            height: 50px;
-          }
         }
 
-        /* NEW: EXTRA SMALL SCREEN LOGO ADJUSTMENT */
+        /* Updated mobile logo logic */
         @media (max-width: 450px) {
-          .logo-text {
-            display: none; /* Removes the name entirely below 450px */
-          }
           .logo-section {
-            gap: 0;
+            gap: 8px;
           }
           .logo-img {
             width: 45px;
             height: 45px;
+          }
+          .logo-text h1 {
+            font-size: 18px; /* Fixed small size for narrow screens */
+            letter-spacing: 0.5px;
+          }
+          .logo-text p {
+            font-size: 7px;
+            letter-spacing: 1.5px;
           }
         }
       `}</style>

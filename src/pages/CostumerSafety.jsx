@@ -35,6 +35,7 @@ function Safety() {
       <section className="safety-hero">
         <div className="hero-overlay"></div>
         <div className="safety-hero-content">
+          <span className="hero-pretitle">SAFETY STANDARDS</span>
           <h1>Customer Safety First</h1>
           <p>Your safety is our top priority. Learn how to handle LPG responsibly.</p>
           <div className="red-accent-center"></div>
@@ -55,14 +56,12 @@ function Safety() {
               </p>
               <div className="warning-box">
                 <strong>⚠️ Critical Fact:</strong> LPG is heavier than air. In the event of a leak, 
-                it can accumulate in low-lying areas (like floors or basements) if ventilation is inadequate.
+                it can accumulate in low-lying areas (like floors or basements).
               </div>
             </div>
-            <div className="facts-image">
-               <div className="safety-illustration">
-                  <div className="circle-bg"></div>
-                  <span className="main-icon">🛡️</span>
-               </div>
+            <div className="facts-image-container">
+               <img src="/Photos/CyllindersMoreThan100.jpeg" alt="LPG Cylinder Storage" className="side-image" />
+               <div className="image-accent-border"></div>
             </div>
           </div>
         </div>
@@ -72,15 +71,15 @@ function Safety() {
       <section className="safety-tips">
         <div className="container">
           <div className="section-header">
+            <span className="tagline">BEST PRACTICES</span>
             <h2>Safety Prescriptions</h2>
-            <p>Adopt these essential habits to ensure a safe energy experience at home or work.</p>
             <div className="red-accent"></div>
           </div>
 
           <div className="tips-grid">
             {safetyTips.map((tip, index) => (
               <div className="tip-card" key={index}>
-                <div className="tip-icon">{tip.icon}</div>
+                <div className="tip-icon-box">{tip.icon}</div>
                 <div className="tip-info">
                   <h3>{tip.title}</h3>
                   <p>{tip.desc}</p>
@@ -94,15 +93,21 @@ function Safety() {
       {/* EMERGENCY ACTION */}
       <section className="emergency">
         <div className="container">
-          <div className="emergency-card">
-            <h2>In Case of a Leak</h2>
-            <p>If you detect a leak via the soap test or smell:</p>
-            <ul>
-              <li>Immediately turn off the regulator.</li>
-              <li>Disconnect the cylinder from the stove/appliance.</li>
-              <li>Move the cylinder to an open, well-ventilated outdoor area.</li>
-              <li>Contact your local Indus Gas distributor immediately for assistance.</li>
-            </ul>
+          <div className="emergency-flex">
+            <div className="emergency-card">
+              <h2>In Case of a Leak</h2>
+              <p>If you detect a leak via the soap test or smell:</p>
+              <ul>
+                <li>Immediately turn off the regulator.</li>
+                <li>Disconnect the cylinder from the stove/appliance.</li>
+                <li>Move the cylinder to an open, well-ventilated outdoor area.</li>
+                <li>Contact your local Indus Gas distributor immediately.</li>
+              </ul>
+            </div>
+            <div className="emergency-visual">
+                <img src="/Photos/ThreeBlueCyllinders.jpeg" alt="Cylinder Safety" />
+                <div className="sos-overlay">EMERGENCY GUIDE</div>
+            </div>
           </div>
         </div>
       </section>
@@ -112,135 +117,94 @@ function Safety() {
 
         /* HERO SECTION */
         .safety-hero {
-          height: 45vh;
-          min-height: 350px;
-          background: url('/BG.jpg') no-repeat center/cover;
+          height: 50vh;
+          min-height: 400px;
+          background: url('/Photos/StorageUnit3.jpeg') no-repeat center/cover;
           position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-          text-align: center;
-          padding: 0 20px;
+          display: flex; align-items: center; justify-content: center; color: white; text-align: center;
         }
         .safety-hero .hero-overlay {
           position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-          background: rgba(0,0,0,0.8);
+          background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.4));
         }
-        .safety-hero-content { position: relative; z-index: 2; }
-        .safety-hero-content h1 { font-size: clamp(32px, 7vw, 48px); font-weight: 800; margin: 0; }
-        .safety-hero-content p { font-size: clamp(16px, 2vw, 18px); opacity: 0.9; margin-top: 10px; }
-        .red-accent-center { width: 60px; height: 5px; background: #d94b2b; margin: 20px auto; }
+        .safety-hero-content { position: relative; z-index: 2; padding: 0 20px; }
+        .hero-pretitle { color: #d94b2b; font-weight: 800; letter-spacing: 4px; font-size: 14px; margin-bottom: 10px; display: block; }
+        .safety-hero-content h1 { font-size: clamp(32px, 8vw, 56px); font-weight: 900; margin: 0; text-transform: uppercase; }
+        .red-accent-center { width: 80px; height: 6px; background: #d94b2b; margin: 25px auto; }
 
         /* LPG FACTS */
-        .lpg-facts { padding: 80px 10%; background: #fcfcfc; }
+        .lpg-facts { padding: 100px 10%; background: #fcfcfc; }
         .container { max-width: 1200px; margin: auto; }
-        .facts-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
-        .tagline { color: #d94b2b; font-weight: 700; letter-spacing: 2px; font-size: 13px; }
-        .facts-text h2 { font-size: clamp(28px, 5vw, 36px); font-weight: 800; margin: 15px 0; line-height: 1.2; }
-        .facts-text p { color: #555; line-height: 1.8; margin-bottom: 25px; }
+        .facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .facts-text h2 { font-size: clamp(28px, 5vw, 42px); font-weight: 900; margin: 15px 0 25px; line-height: 1.1; }
+        .facts-text p { color: #555; line-height: 1.8; margin-bottom: 25px; font-size: 17px; }
         
         .warning-box {
           background: #fff3f3;
-          border-left: 5px solid #d94b2b;
-          padding: 25px;
+          border-left: 6px solid #d94b2b;
+          padding: 30px;
           color: #d94b2b;
           line-height: 1.6;
-          font-size: 15px;
+          font-size: 16px;
+          font-weight: 500;
         }
 
-        .safety-illustration {
-          position: relative;
-          height: 250px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .circle-bg {
-          position: absolute;
-          width: 200px; height: 200px;
-          background: #f0f0f0;
-          border-radius: 50%;
-          animation: pulse 4s infinite;
-        }
-        .main-icon { font-size: clamp(60px, 10vw, 100px); z-index: 2; }
-
-        @keyframes pulse {
-          0% { transform: scale(1); opacity: 1; }
-          50% { transform: scale(1.1); opacity: 0.5; }
-          100% { transform: scale(1); opacity: 1; }
-        }
+        .facts-image-container { position: relative; }
+        .side-image { width: 100%; border-radius: 8px; box-shadow: 20px 20px 0 #eee; z-index: 2; position: relative; }
 
         /* SAFETY TIPS */
-        .safety-tips { padding: 80px 10%; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: clamp(30px, 6vw, 42px); font-weight: 800; margin-bottom: 10px; }
-        .safety-tips .red-accent { width: 60px; height: 5px; background: #d94b2b; margin: 0 auto; }
+        .safety-tips { padding: 100px 10%; }
+        .section-header { text-align: center; margin-bottom: 70px; }
+        .section-header h2 { font-size: clamp(32px, 6vw, 48px); font-weight: 900; margin-bottom: 15px; }
+        .safety-tips .red-accent { width: 80px; height: 6px; background: #d94b2b; margin: 0 auto; }
 
-        .tips-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 25px; 
-        }
+        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .tip-card {
-          display: flex;
-          gap: 20px;
-          padding: clamp(20px, 3vw, 30px);
-          background: #fff;
-          border: 1px solid #eee;
-          transition: 0.3s;
+          display: flex; gap: 25px; padding: 40px; background: white;
+          border: 1px solid #eee; transition: 0.4s; align-items: flex-start;
         }
-        .tip-card:hover { border-color: #d94b2b; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .tip-icon { font-size: 35px; flex-shrink: 0; }
-        .tip-info h3 { font-size: 20px; margin-bottom: 10px; color: #1a1a1a; font-weight: 700; }
-        .tip-info p { font-size: 14px; color: #666; line-height: 1.6; }
+        .tip-card:hover { border-color: #d94b2b; transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .tip-icon-box { font-size: 50px; line-height: 1; flex-shrink: 0; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
+        .tip-info h3 { font-size: 22px; margin-bottom: 12px; color: #1a1a1a; font-weight: 800; }
+        .tip-info p { font-size: 15px; color: #666; line-height: 1.7; }
 
         /* EMERGENCY SECTION */
-        .emergency { padding: 0 10% 80px; }
-        .emergency-card {
-          background: #1a1a1a;
-          color: white;
-          padding: clamp(30px, 6vw, 60px);
-          border-radius: 4px;
-          text-align: center;
-        }
-        .emergency-card h2 { color: #d94b2b; font-size: clamp(24px, 5vw, 32px); margin-bottom: 20px; font-weight: 800; }
-        .emergency-card ul { 
-          list-style: none; 
-          padding: 0; 
-          display: inline-block; 
-          text-align: left; 
-          margin-top: 15px;
-        }
-        .emergency-card li { 
-          margin-bottom: 15px; 
-          padding-left: 30px; 
-          position: relative; 
-          color: #ccc;
-          font-size: 15px;
-          line-height: 1.4;
-        }
-        .emergency-card li::before {
-          content: "✔";
-          position: absolute;
-          left: 0;
-          color: #d94b2b;
-          font-weight: bold;
+        .emergency { padding: 0 10% 100px; }
+        .emergency-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+        
+        .emergency-card { background: #1a1a1a; color: white; padding: 60px; }
+        .emergency-card h2 { color: #d94b2b; font-size: clamp(28px, 4vw, 36px); margin-bottom: 25px; font-weight: 900; }
+        .emergency-card ul { list-style: none; padding: 0; margin-top: 25px; }
+        .emergency-card li { margin-bottom: 18px; padding-left: 35px; position: relative; color: #ccc; font-size: 16px; line-height: 1.5; }
+        .emergency-card li::before { content: "✔"; position: absolute; left: 0; color: #d94b2b; font-weight: bold; font-size: 20px; }
+
+        .emergency-visual { position: relative; height: 100%; }
+        .emergency-visual img { width: 100%; height: 100%; object-fit: cover; }
+        .sos-overlay { 
+            position: absolute; top: 20px; right: 20px; background: #d94b2b; 
+            color: white; padding: 10px 20px; font-weight: 900; font-size: 12px; letter-spacing: 2px;
         }
 
-        /* RESPONSIVE BREAKPOINTS */
+        /* RESPONSIVE ADDITIONS */
         @media (max-width: 992px) {
-          .lpg-facts, .safety-tips, .emergency { padding-left: 5%; padding-right: 5%; }
-          .facts-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-          .facts-text { order: 2; }
-          .facts-image { order: 1; }
-          .warning-box { text-align: left; }
+          .lpg-facts { padding: 60px 5%; }
+          .facts-grid { grid-template-columns: 1fr; gap: 40px; }
+          .side-image { box-shadow: 10px 10px 0 #eee; }
+          
+          .safety-tips { padding: 60px 5%; }
+          .tips-grid { grid-template-columns: 1fr; }
+          .tip-card { padding: 30px 20px; }
+          
+          .emergency { padding: 0 5% 60px; }
+          .emergency-flex { grid-template-columns: 1fr; }
+          .emergency-card { padding: 40px 30px; }
+          .emergency-visual { height: 350px; order: -1; } /* Image moves above text on mobile */
         }
 
-        @media (max-width: 576px) {
-          .tip-card { flex-direction: column; text-align: center; align-items: center; }
-          .tip-info h3 { font-size: 18px; }
-          .emergency-card ul { display: block; }
+        @media (max-width: 480px) {
+          .safety-hero { height: 40vh; }
+          .warning-box { padding: 20px; }
+          .tip-card { flex-direction: column; gap: 15px; }
         }
       `}</style>
     </div>

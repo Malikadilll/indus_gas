@@ -1,3 +1,4 @@
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -16,6 +17,7 @@
     outline-offset: 2px;
   }
 }
+/* Ensure content starts below the 80px-ish navbar */
 
 .hero {
   position: relative;
