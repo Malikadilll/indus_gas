@@ -48,7 +48,7 @@ function App() {
 
         @media (max-width: 992px) {
           .main-content {
-            padding-top: 85px; /* Adjust for slightly smaller mobile navbar height */
+            padding-top: 80px; /* Adjust for slightly smaller mobile navbar height */
           }
         }
       `}</style>
