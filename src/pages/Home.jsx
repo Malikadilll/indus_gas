@@ -55,7 +55,7 @@ function Home() {
 
             <div className="service-card active-card">
               <div className="card-image-box">
-                <img src="/Photos/StorageUnit4.jpeg" alt="LPG Storage Facility" />
+                <img src="/Photos/StorageUnit1.jpeg" alt="LPG Storage Facility" />
               </div>
               <div className="card-content">
                 <div className="card-number">02</div>

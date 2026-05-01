@@ -105,7 +105,7 @@ function Safety() {
               </ul>
             </div>
             <div className="emergency-visual">
-                <img src="/Photos/ThreeBlueCyllinders.jpeg" alt="Cylinder Safety" />
+                <img src="/Photos/safety.jpg" alt="Cylinder Safety" />
                 <div className="sos-overlay">EMERGENCY GUIDE</div>
             </div>
           </div>

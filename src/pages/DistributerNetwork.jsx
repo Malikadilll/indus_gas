@@ -4,7 +4,7 @@ function Network() {
   const stats = [
     { label: "Distributors", value: "500+", icon: "🏪" },
     { label: "Cylinders in Circulation", value: "80,000+", icon: "🔋" },
-    { label: "Owned Bowsers", value: "25", icon: "🚛" },
+    { label: "Owned Bowsers", value: "05", icon: "🚛" }, // Updated value to 05
     { label: "Zones Covered", value: "All over Pakistan", icon: "📍" },
   ];
 
@@ -134,10 +134,10 @@ function Network() {
         .compliance-img { width: 100%; height: 350px; object-fit: cover; display: block; }
         .cert-badge { background: #d94b2b; color: white; padding: 6px 18px; font-weight: 800; font-size: 12px; border-radius: 50px; position: absolute; bottom: 20px; left: 20px; }
 
-        /* STATS SECTION */
+        /* STATS SECTION - REDUCED SIZES */
         .stats-section { 
             padding: 100px 10%; 
-            background: url('/Photos/StorageUnit5.jpeg') no-repeat center/cover; 
+            background: url('/Photos/StorageUnit3.jpeg') no-repeat center/cover; 
             position: relative; color: white; text-align: center; 
         }
         .stats-bg-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(26, 26, 26, 0.9); }
@@ -145,9 +145,9 @@ function Network() {
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
         
         .stat-card { padding: 20px; }
-        .stat-icon { font-size: 64px; margin-bottom: 15px; line-height: 1; display: block; }
-        .stat-card h3 { font-size: 42px; font-weight: 900; color: #d94b2b; margin-bottom: 10px; }
-        .stat-card p { font-size: 13px; color: #ccc; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
+        .stat-icon { font-size: 40px; margin-bottom: 12px; line-height: 1; display: block; opacity: 0.9; }
+        .stat-card h3 { font-size: 32px; font-weight: 900; color: #d94b2b; margin-bottom: 8px; }
+        .stat-card p { font-size: 12px; color: #ccc; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
 
         /* LOGISTICS BANNER */
         .logistics-banner {
@@ -176,7 +176,7 @@ function Network() {
         .zone-card:hover h4 { color: #d94b2b; }
         .zone-card p { color: #666; font-size: 15px; line-height: 1.7; }
 
-        /* RESPONSIVE ADDITIONS (Does not change desktop visuals) */
+        /* RESPONSIVE ADDITIONS */
         @media (max-width: 992px) {
           .compliance { padding: 60px 5%; }
           .compliance-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -187,8 +187,8 @@ function Network() {
 
         @media (max-width: 480px) {
           .network-hero { height: 40vh; }
-          .stat-card h3 { font-size: 32px; }
-          .stat-icon { font-size: 48px; }
+          .stat-card h3 { font-size: 28px; }
+          .stat-icon { font-size: 32px; }
           .zone-card { padding: 30px 20px; }
         }
       `}</style>

@@ -40,9 +40,10 @@ function About() {
             </div>
             <div className="image-section">
                <div className="styled-image-box">
+                  {/* Image changed from Opening Ceremony */}
                   <img 
-                    src="/Photos/OpeningCeremony.jpeg" 
-                    alt="Indus Gas Opening Ceremony" 
+                    src="/Photos/PeopleNextToCyllinders.jpeg" 
+                    alt="Indus Gas Infrastructure" 
                     className="ceremony-img" 
                   />
                   <div className="experience-badge">
@@ -83,7 +84,7 @@ function About() {
                       <h4>Strict Compliance</h4>
                   </div>
                   <div className="infra-card">
-                      <img src="/Photos/StorageUnit4.jpeg" alt="Massive LPG Storage" />
+                      <img src="/Photos/StorageUnit1.jpeg" alt="Massive LPG Storage" />
                       <h4>High Capacity Storage</h4>
                   </div>
                   <div className="infra-card">
@@ -148,13 +149,13 @@ function About() {
         .text-section h2 { font-size: clamp(30px, 5vw, 42px); font-weight: 900; color: #1a1a1a; margin: 15px 0 25px; line-height: 1.1; }
         .text-section p { color: #555; line-height: 1.8; margin-bottom: 20px; font-size: 17px; }
 
-        /* REFINED CEREMONY IMAGE BOX */
+        /* REFINED IMAGE BOX */
         .styled-image-box { position: relative; background: #f9f9f9; padding: 10px; border-radius: 8px; box-shadow: 30px 30px 0 #f9f9f9; }
         .ceremony-img { 
           width: 100%; 
           height: auto; 
           max-height: 450px; 
-          object-fit: contain; 
+          object-fit: cover; 
           border-radius: 4px; 
           display: block;
         }
@@ -207,21 +208,17 @@ function About() {
         .team-card h4 { font-size: 22px; margin-bottom: 8px; font-weight: 800; }
         .team-card p { color: #d94b2b; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; }
 
-        /* RESPONSIVE OVERRIDES (Keeps your visuals exactly the same on desktop) */
+        /* RESPONSIVE OVERRIDES */
         @media (max-width: 992px) {
           .about-content { padding: 60px 5%; }
-          .content-grid { grid-template-columns: 1fr; gap: 40px; }
+          .content-grid { grid-template-columns: 1.1fr; gap: 40px; }
           .vision-grid { grid-template-columns: 1fr; }
           .infra-grid { grid-template-columns: 1fr; }
           .infra-card { height: 350px; }
-          
-          /* Prevent the shadow-box from going off-screen on small devices */
           .styled-image-box { box-shadow: 15px 15px 0 #f9f9f9; margin-right: 15px; }
           .experience-badge { left: -10px; bottom: -10px; padding: 15px; }
-          
           .vision-mission { padding: 0 5% 60px; }
           .vision-overlay-box, .vision-box { padding: 40px 20px; }
-          
           .management { padding: 60px 5%; }
           .infrastructure-highlight { padding: 60px 5%; }
         }
