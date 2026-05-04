@@ -101,7 +101,7 @@ function Home() {
         .hero { 
           min-height: 90vh; 
           position: relative; 
-          background: url('/Photos/BowzerNextToStorageUnit.jpeg') no-repeat center/cover;
+          background: url('/Photos/StorageUnit3.jpeg') no-repeat center/cover;
           display: flex; 
           align-items: center; 
           color: white; 
