@@ -67,7 +67,7 @@ function Home() {
 
             <div className="service-card">
               <div className="card-image-box">
-                <img src="/Photos/FullPlantShot.jpeg" alt="LPG Distribution Network" />
+                <img src="/Photos/CyllindersMoreThan100.jpeg" alt="LPG Distribution Network" />
               </div>
               <div className="card-content">
                 <div className="card-number">03</div>

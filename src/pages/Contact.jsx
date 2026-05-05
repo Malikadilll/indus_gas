@@ -41,7 +41,7 @@ function Contact() {
                     <div className="icon-box">📞</div>
                     <h3>Phone</h3>
                   </div>
-                  <p>0314 5140932</p>
+                  <p>0300 2298760</p>
                   <div className="bg-icon-watermark">📞</div>
                 </div>
 
@@ -51,24 +51,17 @@ function Contact() {
                     <div className="icon-box">📧</div>
                     <h3>Email</h3>
                   </div>
-                  <p>info@indusgas.com</p>
+                  <p>info@indusgas.com.pk</p>
                   <div className="bg-icon-watermark">📧</div>
                 </div>
 
                 {/* PHONE 2 CARD */}
-                <div className="info-card">
-                  <div className="card-header">
-                    <div className="icon-box">📞</div>
-                    <h3>Phone</h3>
-                  </div>
-                  <p>0309 3335125</p>
-                  <div className="bg-icon-watermark">📞</div>
-                </div>
+                
               </div>
 
               {/* REINFORCEMENT IMAGE BOX */}
               <div className="contact-image-reinforcement">
-                  <img src="/Photos/BowzerNextToStorageUnit.jpeg" alt="Logistics Infrastructure" />
+                  <img src="/Photos/BowzerNextToStorageUnit2.jpeg" alt="Logistics Infrastructure" />
                   <div className="image-label">24/7 Dispatch & Support</div>
               </div>
             </div>
@@ -78,7 +71,7 @@ function Contact() {
               <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
                 <div className="form-group">
                   <label>Full Name</label>
-                  <input type="text" placeholder="Saad" />
+                  <input type="text" placeholder="Name" />
                 </div>
                 <div className="form-group">
                   <label>Email Address</label>

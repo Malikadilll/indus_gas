@@ -3,8 +3,8 @@ import React from "react";
 function About() {
   const management = [
     { name: "Mr. Qasim Bashir", role: "CEO & Director" },
-    { name: "Mr. Afzal Ahmed", role: "Director" },
-    { name: "Mr. Imtiaz Ahmed", role: "Director" },
+    { name: "Mr. Malik M Afzal", role: "Director" },
+    ,
   ];
 
   return (
@@ -28,7 +28,7 @@ function About() {
               <h2>A Legacy of Excellence in LPG Marketing</h2>
               <p>
                 <strong>Indus Gas Private Limited</strong> is a premier LPG Marketing and Distribution 
-                Company in Pakistan. Backed by a group heritage of over 15 years in the energy sector, 
+                Company in Pakistan. Backed by a group heritage of over 3 years in the energy sector, 
                 we bring unparalleled expertise in Procurement, Storage, Handling, and Distribution.
               </p>
               <p>
@@ -42,12 +42,12 @@ function About() {
                <div className="styled-image-box">
                   {/* Image changed from Opening Ceremony */}
                   <img 
-                    src="/Photos/PeopleNextToCyllinders.jpeg" 
+                    src="/Photos/StorageUnit2.jpeg" 
                     alt="Indus Gas Infrastructure" 
                     className="ceremony-img" 
                   />
                   <div className="experience-badge">
-                    <span className="years">15+</span>
+                    <span className="years">3+</span>
                     <span className="exp-text">Years of Quality</span>
                   </div>
                </div>
@@ -60,7 +60,7 @@ function About() {
       <section className="vision-mission">
         <div className="vision-grid">
           <div className="vision-box-image">
-            <img src="/Photos/PeopleNextToCyllinders.jpeg" alt="Our Staff" />
+            <img src="/Photos/SecurityGuards.jpeg" alt="Our Staff" />
             <div className="vision-overlay-box">
                 <div className="icon">🚀</div>
                 <h3>Our Mission</h3>
@@ -88,7 +88,7 @@ function About() {
                       <h4>High Capacity Storage</h4>
                   </div>
                   <div className="infra-card">
-                      <img src="/Photos/CyllinderFillingArea2.jpeg" alt="Active Filling Area" />
+                      <img src="/Photos/Efficient.jpeg" alt="Active Filling Area" />
                       <h4>Efficient Operations</h4>
                   </div>
               </div>

@@ -38,12 +38,12 @@ function Footer() {
         <div className="footer-col">
           <h3>PLANT & CONTACT</h3>
           <div className="address-lines">
-            <p>Chak No 51/JB, Tehsil Saddar,</p>
-            <p>District Faisalabad.</p>
+            <p>Tapo Pir Azeem Shah, Taluka Hussain Bux Mari</p>
+            <p>Tehsil & District Mirpurkhas, Sindh.</p>
           </div>
           <div className="contact-info">
-            <p>📞 0314 5140932</p>
-            <p>📧 info@indusgas.com</p>
+            <p>📞 0300 2298760</p>
+            <p>📧 info@indusgas.com.pk</p>
           </div>
         </div>
       </div>
